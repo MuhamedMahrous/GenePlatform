@@ -42,7 +42,7 @@ public class NERController
     @FXML
     Label ner_relation,ner_second_arg;
     public ObservableList first_arg=FXCollections.observableArrayList();
-    public Compound_list first_list ;
+    public Compound_list first_list =new Compound_list();
     public String unique_relation="";
 
     Compound_list ner = new Compound_list();
@@ -51,7 +51,6 @@ public class NERController
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
 
-        first_list = new Compound_list();
         ner_first_arg.setItems(first_arg);
         FIRST_initilize_drag();
         initilize_drag(ner_relation);
@@ -168,12 +167,13 @@ public class NERController
                    {
                        FileChooser fileChooser = new FileChooser();
                        fileChooser.setTitle("Select Directory");
-                       File file =fileChooser.showSaveDialog(ner_second_arg.getScene().getWindow());
+                       File file =fileChooser.showOpenDialog(ner_second_arg.getScene().getWindow());
                        if(file!=null)
                        {
                            ner_second_arg.setText(file.getName());
+                           if(ner.get_size()>=1)
+                               ner.remove_list();
                            ner.add_file(file.getPath());
-
                            // System.out.println(ner);
                        }
                    }
@@ -191,6 +191,8 @@ public class NERController
                     Optional<String> result = dialog.showAndWait();
                     // The Java 8 way to get the response value (with lambda expression).
                     result.ifPresent(string -> {label.setText(string);
+                        if(ner.get_size()>=1)
+                            ner.remove_list();
                         ner.add_String(string);
                     });
                     dragCompleted = true;
@@ -368,7 +370,7 @@ public class NERController
 
                         FileChooser fileChooser = new FileChooser();
                         fileChooser.setTitle("Select Directory");
-                        File file =fileChooser.showSaveDialog(ner_first_arg.getScene().getWindow());
+                        File file =fileChooser.showOpenDialog(ner_first_arg.getScene().getWindow());
                         if(file!=null)
                         {
                             first_arg.add(file.getName());
@@ -434,7 +436,11 @@ public class NERController
 
         if(!x.equals("ERORR"))
         {
-           String y = Check.checktype(x,unique_relation,ner.get_index_type(0));
+            if(ner.get_size()==1)
+            {
+                String y = Check.checktype(x,unique_relation,ner.get_index_type(0));
+
+
            if(!y.equals("ERROR"))
            {
                validated=true;
@@ -451,6 +457,14 @@ public class NERController
                success.setContentText("ERROR IN THE TRIPLE RELATION");
                success.showAndWait();
            }
+            }
+            else
+            {
+                validated=false;
+                Alert success = new Alert(Alert.AlertType.ERROR);
+                success.setContentText("SECOND ARGUMENT IS NOT INITIALIZED");
+                success.showAndWait();
+            }
         }
         else {
             validated=false;

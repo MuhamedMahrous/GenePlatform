@@ -44,10 +44,10 @@ public class RelationController
     ListView ner_second_arg;
 
     public ObservableList first_arg=FXCollections.observableArrayList();
-    public Compound_list first_list ;
+    public Compound_list first_list = new Compound_list();
 
     public ObservableList second_arg=FXCollections.observableArrayList();
-    public Compound_list second_list ;
+    public Compound_list second_list =new Compound_list();
 
     public List<String> generics = Arrays.asList(
             "CD",
@@ -223,7 +223,7 @@ public class RelationController
 
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setTitle("Select Directory");
-                File file =fileChooser.showSaveDialog(ner_first_arg.getScene().getWindow());
+                File file =fileChooser.showOpenDialog(ner_first_arg.getScene().getWindow());
                 if(file!=null)
                 {
                     first_arg.add(file.getName());
@@ -439,7 +439,7 @@ public class RelationController
 
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setTitle("Select Directory");
-                File file =fileChooser.showSaveDialog(ner_second_arg.getScene().getWindow());
+                File file =fileChooser.showOpenDialog(ner_second_arg.getScene().getWindow());
                 if(file!=null)
                 {
                     second_arg.add(file.getName());

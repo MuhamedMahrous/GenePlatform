@@ -28,9 +28,18 @@ public class Compound_list {
     {
         GUI_link.remove(i);
     }
+
     public LinkedList<GUI_Node> get_list() {
         return GUI_link;
 
+    }
+    public void set_list(LinkedList<GUI_Node> list) {
+        this.GUI_link=list;
+        return;
+    }
+    public void remove_list() {
+         this.GUI_link=new LinkedList<GUI_Node>();
+         return;
     }
 
     public void add_file(String path) {
