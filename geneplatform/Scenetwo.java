@@ -15,6 +15,8 @@ import javafx.scene.input.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import nlp.platform.NER;
+import nlp.platform.Relations;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.File;
@@ -53,12 +55,18 @@ public class Scenetwo implements Initializable {
                 if(blocks.get(key).getClass().equals(Relation_Model.class))
                 {
                     //System.out.println("FOUND RELATION");
+                    Relation_Model rel = (Relation_Model) blocks.get(key);
+                    Relations rela = new Relations();
+                    rela.initialize(rel.first_list,rel.second_list);
+
 
                 }
                 else if(blocks.get(key).getClass().equals(NER_Model.class))
                 {
                     //System.out.println("FOUND NER");
-
+                    NER_Model nera = (NER_Model) blocks.get(key);
+                    NER nerb = new NER();
+                    nerb.initialize(nera.first_list,nera.unique_relation,nera.ner);
                 }
             }
 

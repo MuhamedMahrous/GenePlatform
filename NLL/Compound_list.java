@@ -20,18 +20,17 @@ public class Compound_list {
         GUI_link = new LinkedList<>();
 
     }
-
-    public LinkedList<GUI_Node> get_list() {
-        return GUI_link;
-
+    public void add_index(int i,GUI_Node node)
+    {
+        GUI_link.add(i,node);
     }
-        public void add_index(int i,GUI_Node node)
-        {
-            GUI_link.add(i,node);
-        }
     public void remove_element(int i)
     {
         GUI_link.remove(i);
+    }
+    public LinkedList<GUI_Node> get_list() {
+        return GUI_link;
+
     }
 
     public void add_file(String path) {
@@ -121,4 +120,3 @@ public class Compound_list {
     size=GUI_link.size();
     return size;}
 }
-

@@ -13,9 +13,9 @@ public class NLL {
 
     private Compound_list list1;
     private Compound_list list2;
-    String relation;
+    public String relation;
 
-    void NLL() {
+    public NLL() {
         list1 = new Compound_list();
         list2 = new Compound_list();
 
