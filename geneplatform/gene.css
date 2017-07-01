@@ -1,0 +1,27 @@
+#bp{
+    -fx-background-color:#EAE0CC;
+}
+
+#add_button{
+
+
+    
+}
+#workspace
+{
+
+}
+#vbox_scene_one{
+    -fx-alignment: CENTER;
+
+}
+
+#vbox_scene_one .label{
+-fx-font-size:40;
+-fx-fill-color:#22333B;
+}
+
+#hb_scene_one{
+    -fx-alignment: CENTER;
+    -fx-padding: 10 0 0  10 ;
+   }
