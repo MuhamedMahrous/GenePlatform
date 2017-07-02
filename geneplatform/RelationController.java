@@ -173,6 +173,7 @@ public class RelationController
         }
 
         event.consume();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -228,6 +229,7 @@ public class RelationController
                 {
                     first_arg.add(file.getName());
                     first_list.add_file(file.getPath());
+                    dragCompleted=true;
 
                     // System.out.println(ner);
                 }
@@ -444,6 +446,7 @@ public class RelationController
                 {
                     second_arg.add(file.getName());
                     second_list.add_file(file.getPath());
+                    dragCompleted=true;
 
                     // System.out.println(ner);
                 }

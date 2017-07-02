@@ -168,13 +168,15 @@ public class NERController
                        FileChooser fileChooser = new FileChooser();
                        fileChooser.setTitle("Select Directory");
                        File file =fileChooser.showOpenDialog(ner_second_arg.getScene().getWindow());
+
+
                        if(file!=null)
                        {
                            ner_second_arg.setText(file.getName());
                            if(ner.get_size()>=1)
                                ner.remove_list();
                            ner.add_file(file.getPath());
-                           // System.out.println(ner);
+                           dragCompleted=true;
                        }
                    }
                     else {
@@ -325,6 +327,7 @@ public class NERController
     @SuppressWarnings("unchecked")
     private void FIRST_dragDropped(DragEvent event)
     {
+
         boolean dragCompleted = false;
 
         // Transfer the data to the target
@@ -368,17 +371,19 @@ public class NERController
                 else if (dragboard.getString().equals("file"))
                 {
 
-                        FileChooser fileChooser = new FileChooser();
-                        fileChooser.setTitle("Select Directory");
+
+                    FileChooser fileChooser = new FileChooser();
+                        System.out.println("EN");
                         File file =fileChooser.showOpenDialog(ner_first_arg.getScene().getWindow());
+                        System.out.println("LE");
+
                         if(file!=null)
                         {
                             first_arg.add(file.getName());
                             first_list.add_file(file.getPath());
-
                             // System.out.println(ner);
                         }
-
+                    dragCompleted=true;
 
                 }
                 else if (dragboard.getString().equals("string")) {
@@ -420,10 +425,10 @@ public class NERController
         // If it was moved, clear the selected items
         TransferMode tm = event.getTransferMode();
 
-        if (tm == TransferMode.MOVE)
+        if (tm == TransferMode.COPY)
         {
             // DO SOMETHING AFTER SUCCESS DROPPING TOOK PLACE
-//            System.out.println("NER COMPLETED SUCCESSFULLY");
+            System.out.println("NER COMPLETED SUCCESSFULLY");
 
         }
 

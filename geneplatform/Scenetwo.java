@@ -47,6 +47,12 @@ public class Scenetwo implements Initializable {
         success.setContentText("PLEASE VALIDATE ALL BLOCKS BEFORE FINISHING!");
         success.showAndWait();
         }
+        else if(workspace.getChildren().size()==0)
+        {   Alert success = new Alert(Alert.AlertType.ERROR);
+            success.setContentText("PLEASE ADD ONE CONTAINER AT LEAST!");
+            success.showAndWait();
+        }
+
         else
         {
             HashMap<Integer,BlockModel> blocks = Model.getInstance().getCurrentBlocks();
@@ -69,6 +75,10 @@ public class Scenetwo implements Initializable {
                     nerb.initialize(nera.first_list,nera.unique_relation,nera.ner);
                 }
             }
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setContentText("SUCCESSFULLY CREATED CONFIG FILE/S");
+            success.showAndWait();
+            System.exit(0);
 
         }
     }
