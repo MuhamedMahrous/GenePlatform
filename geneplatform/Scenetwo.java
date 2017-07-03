@@ -1,5 +1,6 @@
 package geneplatform;
 
+import com.sun.webkit.Timer;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -60,7 +61,7 @@ public class Scenetwo implements Initializable {
 
         else
         {
-            ArrayList<BlockModel> blocks = new ArrayList<>();
+            ArrayList<BlockModel> blocks = Model.getInstance().getCurrentBlocks();
             for (int i = 0; i < blocks.size(); i++)
             {
                 if(blocks.get(i).getClass().equals(Relation_Model.class))
