@@ -7,21 +7,51 @@
 
     
 }
+#root{
+    -fx-background-color:#2f3f52;
+}
+#finish
+{
+-fx-background-color:#2ecc71;
+}
+
+#nodes_list,#container_list,#relations_list
+{
+-fx-background-color:#e5e5e5;
+
+}
+.label
+{
+-fx-background-color:#ffffff;
+
+}
+#ner_container .label
+{
+-fx-background-color:none;
+
+}
+#relation_container .label
+{
+-fx-background-color:none;
+
+}
+#ner_container
+{
+-fx-background-color:white;
+-fx-border-color:#000000;
+-fx-border-radius: 10 10 10 10;
+  -fx-background-radius: 10 10 10 10;
+}
+
+#relation_container
+{
+-fx-background-color:white;
+-fx-border-color:#000000;
+-fx-border-radius: 10 10 10 10;
+-fx-background-radius: 10 10 10 10;
+}
+
 #workspace
 {
 
 }
-#vbox_scene_one{
-    -fx-alignment: CENTER;
-
-}
-
-#vbox_scene_one .label{
--fx-font-size:40;
--fx-fill-color:#22333B;
-}
-
-#hb_scene_one{
-    -fx-alignment: CENTER;
-    -fx-padding: 10 0 0  10 ;
-   }

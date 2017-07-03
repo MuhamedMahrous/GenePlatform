@@ -8,13 +8,20 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="195.0" prefWidth="502.0" xmlns:fx="http://javafx.com/fxml" fx:controller="geneplatform.NERController">
+<BorderPane fx:id="ner_container" prefHeight="195.0" prefWidth="502.0" stylesheets="@gene.css" xmlns:fx="http://javafx.com/fxml" fx:controller="geneplatform.NERController">
    <top>
-      <Label text="NER Container" BorderPane.alignment="CENTER">
+      <Label fx:id="ner_title" text="NER Container" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Ubuntu Italic" size="28.0" />
+         </font>
       </Label>
    </top>
    <padding>
@@ -41,7 +48,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="ner_relation" text="Relation" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="ner_relation" text="Relation" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Ubuntu Condensed" size="19.0" />
+                     </font></Label>
                </children>
                <GridPane.margin>
                   <Insets />
@@ -60,7 +70,10 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label fx:id="ner_second_arg" text="NER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="ner_second_arg" text="NER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Ubuntu Condensed" size="19.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -74,6 +87,9 @@
       </GridPane>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" onAction="#validate" text="Validate" BorderPane.alignment="CENTER" />
+      <Button mnemonicParsing="false" onAction="#validate" text="Validate" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Ubuntu Mono" size="20.0" />
+         </font></Button>
    </bottom>
 </BorderPane>
