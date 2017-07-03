@@ -43,7 +43,12 @@ public class Scenetwo implements Initializable {
     public void finish()
     {
         if(Model.getInstance().getCurrentBlocks().size()!=workspace.getChildren().size())
-        {   Alert success = new Alert(Alert.AlertType.ERROR);
+        {
+
+            System.out.println(Model.getInstance().getCurrentBlocks().size());
+            System.out.println(workspace.getChildren().size());
+
+        Alert success = new Alert(Alert.AlertType.ERROR);
         success.setContentText("PLEASE VALIDATE ALL BLOCKS BEFORE FINISHING!");
         success.showAndWait();
         }
@@ -55,22 +60,22 @@ public class Scenetwo implements Initializable {
 
         else
         {
-            HashMap<Integer,BlockModel> blocks = Model.getInstance().getCurrentBlocks();
-            for (Integer key:blocks.keySet())
+            ArrayList<BlockModel> blocks = new ArrayList<>();
+            for (int i = 0; i < blocks.size(); i++)
             {
-                if(blocks.get(key).getClass().equals(Relation_Model.class))
+                if(blocks.get(i).getClass().equals(Relation_Model.class))
                 {
                     //System.out.println("FOUND RELATION");
-                    Relation_Model rel = (Relation_Model) blocks.get(key);
+                    Relation_Model rel = (Relation_Model) blocks.get(i);
                     Relations rela = new Relations();
                     rela.initialize(rel.first_list,rel.second_list);
 
 
                 }
-                else if(blocks.get(key).getClass().equals(NER_Model.class))
+                else if(blocks.get(i).getClass().equals(NER_Model.class))
                 {
                     //System.out.println("FOUND NER");
-                    NER_Model nera = (NER_Model) blocks.get(key);
+                    NER_Model nera = (NER_Model) blocks.get(i);
                     NER nerb = new NER();
                     nerb.initialize(nera.first_list,nera.unique_relation,nera.ner);
                 }

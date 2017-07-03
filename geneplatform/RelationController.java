@@ -43,6 +43,7 @@ public class RelationController
     @FXML
     ListView ner_second_arg;
 
+    private  int my_id=-1;
     public ObservableList first_arg=FXCollections.observableArrayList();
     public Compound_list first_list = new Compound_list();
 
@@ -535,7 +536,9 @@ public class RelationController
             success.setContentText("SUCCESSFULLY VALIDATED");
             success.showAndWait();
             BlockModel my_model = new Relation_Model(first_list,second_list);
-            Model.getInstance().addBlock(my_model,(Integer)this.hashCode());
+            my_id=Model.getInstance().addBlock(my_model,my_id);
+            System.out.println("I AM AT #"+my_id);
+
         } else if (x == 0 && y != 0) {
             validated = false;
             Alert success = new Alert(Alert.AlertType.ERROR);

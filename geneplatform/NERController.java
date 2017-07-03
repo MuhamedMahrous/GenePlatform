@@ -45,6 +45,7 @@ public class NERController
     public Compound_list first_list =new Compound_list();
     public String unique_relation="";
 
+    public int my_id = -1;
     Compound_list ner = new Compound_list();
     Model mymodel = new Model();
 
@@ -453,7 +454,8 @@ public class NERController
                success.setContentText("SUCCESSFULLY VALIDATED");
                success.showAndWait();
                BlockModel my_model = new NER_Model(first_list,unique_relation,ner);
-               Model.getInstance().addBlock(my_model,this.hashCode());
+               my_id=Model.getInstance().addBlock(my_model,my_id);
+               System.out.println("I AM AT #"+my_id);
            }
            else
            {
