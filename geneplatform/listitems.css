@@ -1,0 +1,18 @@
+
+.list-cell
+ {
+    -fx-font-size: 12pt;
+     -fx-background-color:#333333;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-weight: bold;
+
+ }
+
+ .elelist
+  {
+      -fx-border-color:#ed1e79;
+ -fx-border-width:3px;
+  }
+
+
+

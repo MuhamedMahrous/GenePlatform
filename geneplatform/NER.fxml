@@ -4,82 +4,63 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="ner_container" prefHeight="195.0" prefWidth="502.0" stylesheets="@gene.css" xmlns:fx="http://javafx.com/fxml" fx:controller="geneplatform.NERController">
-   <top>
-      <Label fx:id="ner_title" text="NER Container" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </BorderPane.margin>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <font>
-            <Font name="Ubuntu Italic" size="28.0" />
-         </font>
-      </Label>
-   </top>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
+<BorderPane fx:id="ner_container" prefHeight="225.0" prefWidth="966.0" styleClass="ner_container" stylesheets="@gene.css" xmlns:fx="http://javafx.com/fxml" fx:controller="geneplatform.NERController">
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane alignment="CENTER" hgap="8.0" prefHeight="96.0" prefWidth="982.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="724.0" minWidth="10.0" prefWidth="590.0" />
+          <ColumnConstraints maxWidth="180.0" minWidth="10.0" prefWidth="180.0" />
+            <ColumnConstraints maxWidth="180.0" minWidth="10.0" prefWidth="180.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <GridPane alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <GridPane id="re" alignment="CENTER" minWidth="-Infinity" prefHeight="96.0" prefWidth="106.0" styleClass="relation" stylesheets="@grid.css" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="ner_relation" text="Relation" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Label fx:id="ner_relation" text="RELATION" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                      <font>
-                        <Font name="Ubuntu Condensed" size="19.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font></Label>
                </children>
                <GridPane.margin>
-                  <Insets />
+                  <Insets left="3.0" right="3.0" />
                </GridPane.margin>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </GridPane>
-            <GridPane layoutX="204.0" layoutY="10.0" GridPane.columnIndex="2">
+            <GridPane layoutX="204.0" layoutY="10.0" styleClass="ner" GridPane.columnIndex="2">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label fx:id="ner_second_arg" text="NER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Label fx:id="ner_second_arg" text="NER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                      <font>
-                        <Font name="Ubuntu Condensed" size="19.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font></Label>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </GridPane>
-            <ListView fx:id="ner_first_arg" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+            <ListView fx:id="ner_first_arg" orientation="HORIZONTAL" prefHeight="106.0" prefWidth="654.0" styleClass="elelist" stylesheets="@listitems.css" />
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -87,9 +68,33 @@
       </GridPane>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" onAction="#validate" text="Validate" BorderPane.alignment="CENTER">
+      <Button mnemonicParsing="false" onAction="#validate" prefHeight="29.0" prefWidth="108.0" styleClass="validate" text="Validate" textFill="WHITE" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
          <font>
-            <Font name="Ubuntu Mono" size="20.0" />
+            <Font name="System Bold" size="17.0" />
          </font></Button>
    </bottom>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="ner_title" prefHeight="31.0" prefWidth="71.0" text="NER" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="15.0" prefWidth="879.0" styleClass="bar" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </top>
 </BorderPane>

@@ -14,7 +14,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("scenetwo.fxml"));
       primaryStage.setTitle("Gene platform");
-       primaryStage.setScene(new Scene(root, 800, 800));
+       primaryStage.setScene(new Scene(root, 1920, 1080));
+     //  primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 

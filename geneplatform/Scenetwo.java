@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
@@ -37,6 +38,9 @@ public class Scenetwo implements Initializable {
     VBox workspace;
     @FXML
     ListView nodes_list, relations_list,container_list;
+
+    final ScrollPane sp = new ScrollPane();
+
     public ObservableList relations=FXCollections.observableArrayList(),
             nodes=FXCollections.observableArrayList(),container=FXCollections.observableArrayList();
     private final ObjectProperty<ListView> dragSource = new SimpleObjectProperty<>();
@@ -89,30 +93,35 @@ public class Scenetwo implements Initializable {
         }
     }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {        
-        
-        nodes.add("file");
-        nodes.add("string");
-        nodes.add("generic");
+    public void initialize(URL url, ResourceBundle rb) {
+
+        nodes.add("FILE");
+        nodes.add("STRING");
+        nodes.add("GENERIC");
 
         
-        relations.add("one to one");//one to one  "0"
-        relations.add("one to all");//one to all "1"
-        relations.add("all to one");//all to one "2"
-        relations.add("all to all");//all to all  "3"
+        relations.add("ONE TO ONE");//one to one  "0"
+        relations.add("ONE TO ALL");//ONE TO ALL "1"
+        relations.add("ALL TO ONE");//ALL TO ONE "2"
+        relations.add("ALL TO ALL");//ALL TO ALL  "3"
 
         container.add("NER");
-        container.add("Relation");
+        container.add("RELATION");
+
 
 
         nodes_list.setItems(nodes);
+
         nodes_list.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        nodes_list.setMaxWidth(Control.USE_COMPUTED_SIZE);
 
         relations_list.setItems(relations);
         relations_list.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        relations_list.setMaxWidth(Control.USE_COMPUTED_SIZE);
 
         container_list.setItems(container);
         container_list.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        container_list.setMaxWidth(Control.USE_COMPUTED_SIZE);
 
 
         initilize_events_source(nodes_list);
@@ -204,14 +213,15 @@ public class Scenetwo implements Initializable {
         // If drag board has an ITEM_LIST and it is not being dragged
         // over itself, we accept the MOVE transfer mode
         Dragboard dragboard = event.getDragboard();
-       // System.out.println("TYPE1: "+event.getGestureSource().getClass()+"and Listview class = "+ListView.class);
-        //System.out.println("TYPE2: "+ws.getClass()+"and VBox class = "+VBox.class);
+      // System.out.println("TYPE1: "+event.getGestureSource().getClass());
+      //  System.out.println("TYPE2: "+ws.getClass()+"and VBox class = "+VBox.class);
         ListView sourcelist = (ListView)(event.getGestureSource());
+      //  System.out.println(sourcelist.getId());
 
         if (sourcelist.getId().equals("container_list") && dragboard.hasString())
         {
             event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-          //System.out.println("ENTERED");
+        //  System.out.println("ENTERED");
         }
         else {
             event.acceptTransferModes(TransferMode.NONE);
@@ -242,7 +252,7 @@ public class Scenetwo implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("NER.fxml"));
                 ws.getChildren().add(root);
             }
-            else if (dragboard.getString().equals("Relation"))
+            else if (dragboard.getString().equals("RELATION"))
             {
                 Parent root = FXMLLoader.load(getClass().getResource("Relation.fxml"));
                 ws.getChildren().add(root);

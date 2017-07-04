@@ -129,7 +129,7 @@ public class NERController
   //          System.out.println("NER DROPPED");
             if (label.getId().equals(ner_relation.getId()))
             {
-                    if (dragboard.getString().equals("one to one"))
+                    if (dragboard.getString().equals("ONE TO ONE"))
                     {
                         // CHECK FIRST ARG IS NOT FILE
 
@@ -138,7 +138,7 @@ public class NERController
                         dragCompleted = true;
 
                     }
-                    else if (dragboard.getString().equals("all to one"))
+                    else if (dragboard.getString().equals("ALL TO ONE"))
                     {
                         // CHECK FIRST IS FILE
 
@@ -147,7 +147,7 @@ public class NERController
                         dragCompleted = true;
 
                     }
-                    else if (dragboard.getString().equals("one to all")||dragboard.getString().equals("all to all"))
+                    else if (dragboard.getString().equals("ONE TO ALL")||dragboard.getString().equals("ALL TO ALL"))
                     {
                         unique_relation="-1";
                         error_alert(event);
@@ -162,9 +162,9 @@ public class NERController
             }
             else if (label.getId().equals(ner_second_arg.getId()))
             {
-                if (dragboard.getString().equals("file"))
+                if (dragboard.getString().equals("FILE"))
                 {
-                   if(ner_relation.getText().equals("one to one"))
+                   if(ner_relation.getText().equals("ONE TO ONE"))
                    {
                        FileChooser fileChooser = new FileChooser();
                        fileChooser.setTitle("Select Directory");
@@ -185,7 +185,7 @@ public class NERController
                     dragCompleted=false;
                 }
                 }
-                else if (dragboard.getString().equals("string")) {
+                else if (dragboard.getString().equals("STRING")) {
                     TextInputDialog dialog = new TextInputDialog("");
                     dialog.setTitle("Text Input Dialog");
                     dialog.setHeaderText("String input");
@@ -338,7 +338,7 @@ public class NERController
         {
 
                 // Relation ADDING TO THE LIST
-                if (dragboard.getString().equals("one to one"))
+                if (dragboard.getString().equals("ONE TO ONE"))
                 {
 
                     first_arg.add(dragboard.getString());
@@ -346,21 +346,21 @@ public class NERController
                     dragCompleted = true;
 
                 }
-                else if (dragboard.getString().equals("all to one"))
+                else if (dragboard.getString().equals("ALL TO ONE"))
                 {
                     first_arg.add(dragboard.getString());
                     first_list.add_Relation("2");
                     dragCompleted = true;
 
                 }
-                else if (dragboard.getString().equals("one to all"))
+                else if (dragboard.getString().equals("ONE TO ALL"))
                 {
                     first_arg.add(dragboard.getString());
                     first_list.add_Relation("1");
                     dragCompleted = true;
 
                 }
-                else if (dragboard.getString().equals("all to all"))
+                else if (dragboard.getString().equals("ALL TO ALL"))
                 {
                     first_arg.add(dragboard.getString());
                     first_list.add_Relation("3");
@@ -369,7 +369,7 @@ public class NERController
                 }
 
 
-                else if (dragboard.getString().equals("file"))
+                else if (dragboard.getString().equals("FILE"))
                 {
 
 
@@ -387,7 +387,7 @@ public class NERController
                     dragCompleted=true;
 
                 }
-                else if (dragboard.getString().equals("string")) {
+                else if (dragboard.getString().equals("STRING")) {
                     TextInputDialog dialog = new TextInputDialog("");
 
                     dialog.setTitle("Text Input Dialog");

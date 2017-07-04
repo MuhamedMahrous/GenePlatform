@@ -1,3 +1,4 @@
+/*
 #bp{
     -fx-background-color:#EAE0CC;
 }
@@ -5,7 +6,7 @@
 #add_button{
 
 
-    
+
 }
 #root{
     -fx-background-color:#2f3f52;
@@ -55,3 +56,71 @@
 {
 
 }
+*/
+
+#top
+{
+-fx-background-color:#333333;
+}
+
+.list-cell
+ {
+
+     -fx-text-fill: white;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-weight: bold;
+ }
+
+.ner_container
+
+{
+       -fx-background-color:#333333;
+}
+
+.relation
+{
+     -fx-border-color:#009245;
+-fx-border-width:3px;
+-fx-border-radius: 10;
+
+}
+.ner
+{
+     -fx-border-color:#ed1e79;
+-fx-border-width:3px;
+-fx-border-radius: 10;
+
+}
+.bar
+{
+    -fx-background-color:#990099;
+
+}
+
+.validate
+{
+    -fx-background-color:#990099;
+
+
+}
+ .container
+ {
+      -fx-background-color:   #990099;
+ }
+
+ .nodes
+ {
+        -fx-background-color:   #ed1e79;
+ }
+
+ .relations
+  {
+         -fx-background-color:   #009245;
+  }
+
+  #finish
+  {
+  -fx-background-color:#333333;
+  }
+

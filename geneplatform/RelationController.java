@@ -189,7 +189,7 @@ public class RelationController
         {
 
             // Relation ADDING TO THE LIST
-            if (dragboard.getString().equals("one to one"))
+            if (dragboard.getString().equals("ONE TO ONE"))
             {
 
                 first_arg.add(dragboard.getString());
@@ -197,21 +197,21 @@ public class RelationController
                 dragCompleted = true;
 
             }
-            else if (dragboard.getString().equals("all to one"))
+            else if (dragboard.getString().equals("ALL TO ONE"))
             {
                 first_arg.add(dragboard.getString());
                 first_list.add_Relation("2");
                 dragCompleted = true;
 
             }
-            else if (dragboard.getString().equals("one to all"))
+            else if (dragboard.getString().equals("ONE TO ALL"))
             {
                 first_arg.add(dragboard.getString());
                 first_list.add_Relation("1");
                 dragCompleted = true;
 
             }
-            else if (dragboard.getString().equals("all to all"))
+            else if (dragboard.getString().equals("ALL TO ALL"))
             {
                 first_arg.add(dragboard.getString());
                 first_list.add_Relation("3");
@@ -220,7 +220,7 @@ public class RelationController
             }
 
 
-            else if (dragboard.getString().equals("file"))
+            else if (dragboard.getString().equals("FILE"))
             {
 
                 FileChooser fileChooser = new FileChooser();
@@ -237,7 +237,7 @@ public class RelationController
 
 
             }
-            else if (dragboard.getString().equals("string")) {
+            else if (dragboard.getString().equals("STRING")) {
                 TextInputDialog dialog = new TextInputDialog("");
 
                 dialog.setTitle("Text Input Dialog");
@@ -254,7 +254,7 @@ public class RelationController
             }
 
 
-            else if (dragboard.getString().equals("generic"))
+            else if (dragboard.getString().equals("GENERIC"))
             {
 
 
@@ -406,7 +406,7 @@ public class RelationController
         {
 
             // Relation ADDING TO THE LIST
-            if (dragboard.getString().equals("one to one"))
+            if (dragboard.getString().equals("ONE TO ONE"))
             {
 
                 second_arg.add(dragboard.getString());
@@ -414,21 +414,21 @@ public class RelationController
                 dragCompleted = true;
 
             }
-            else if (dragboard.getString().equals("all to one"))
+            else if (dragboard.getString().equals("ALL TO ONE"))
             {
                 second_arg.add(dragboard.getString());
                 second_list.add_Relation("2");
                 dragCompleted = true;
 
             }
-            else if (dragboard.getString().equals("one to all"))
+            else if (dragboard.getString().equals("ONE TO ALL"))
             {
                 second_arg.add(dragboard.getString());
                 second_list.add_Relation("1");
                 dragCompleted = true;
 
             }
-            else if (dragboard.getString().equals("all to all"))
+            else if (dragboard.getString().equals("ALL TO ALL"))
             {
                 second_arg.add(dragboard.getString());
                 second_list.add_Relation("3");
@@ -437,7 +437,7 @@ public class RelationController
             }
 
 
-            else if (dragboard.getString().equals("file"))
+            else if (dragboard.getString().equals("FILE"))
             {
 
                 FileChooser fileChooser = new FileChooser();
@@ -454,7 +454,7 @@ public class RelationController
 
 
             }
-            else if (dragboard.getString().equals("string")) {
+            else if (dragboard.getString().equals("STRING")) {
                 TextInputDialog dialog = new TextInputDialog("");
 
                 dialog.setTitle("Text Input Dialog");
@@ -471,7 +471,7 @@ public class RelationController
             }
 
 
-            else if (dragboard.getString().equals("generic"))
+            else if (dragboard.getString().equals("GENERIC"))
             {
 
 
