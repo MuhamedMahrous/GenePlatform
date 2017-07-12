@@ -1,3 +1,29 @@
+/*
+Author:				Muhamed Mahrous
+Date:				15/10/2016
+Version:			1.0
+Project ID:			I.E. Framework
+CS Class:			N/A
+Programming Language:		JAVA
+OS/Hardware dependencies:	None
+
+Problem Description:
+The MVC model of the framework.
+
+Overall Design:
+System structure:          A singleton class to help the framework main scene "Scenetwo" to communicate with the knowledge
+                           space it holds.
+Data representation:
+                        1.Model: the singleton instance.
+                        2.blocks: holds all knowledge spaces.
+                        3.counter: holds the number of knowledge spaces.
+Algorithms:	        None.
+
+
+Program Assumptions and Restrictions :
+None.
+*/
+
 package geneplatform;
 
 import java.util.ArrayList;

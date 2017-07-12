@@ -1,8 +1,31 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Author:				Muhamed Mahrous
+Date:				15/10/2016
+Version:			1.0
+Project ID:			I.E. Framework
+CS Class:			N/A
+Programming Language:		JAVA
+OS/Hardware dependencies:	None
+
+Problem Description:
+The controller of the Compound Relation knowledge space.
+
+Overall Design:           The initialize method initializes drag operations and the data members of the class.
+                          and the validate method handles the validation of this knowledge space.
+System structure:          This is a controller in the MVC architecture.
+Data representation:
+ ObservableLists :      1.first_list : holds the first pattern.
+                        2.second_list: holds the second pattern.
+                        3.generics: holds all allowed NLP Part of speech tags.
+
+Algorithms:	        None.
+
+
+Program Assumptions and Restrictions :
+None; validation handles this.
+
+*/
+
 package geneplatform;
 
 import java.io.File;
@@ -24,11 +47,6 @@ import javafx.stage.FileChooser;
 import NLL.*;
 import NLL.Relation_Node;
 
-/**
- * FXML Controller class
- *
- * @author muhammedmahrous
- */
 public class RelationController
         implements Initializable
 {

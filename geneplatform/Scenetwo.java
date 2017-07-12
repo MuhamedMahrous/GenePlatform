@@ -1,5 +1,33 @@
-package geneplatform;
+/*
+Author:				Muhamed Mahrous
+Date:				15/10/2016
+Version:			1.0
+Project ID:			I.E. Framework
+CS Class:			N/A
+Programming Language:		JAVA
+OS/Hardware dependencies:	None
 
+Problem Description:
+The controller of the main Framework scene.
+
+Overall Design:           The initialize method initializes drag operations and the data members of the class.
+                          and the finish method handles the validation of all knowledge spaces before exiting the framework.
+System structure:          This is a controller in the MVC architecture.
+Data representation:
+ ObservableLists :  1.relations: holds all relations.
+                    2.nodes: holds all nodes.
+                    3.container: holds the two knowledge spaces.
+
+
+Algorithms:	        None.
+
+
+Program Assumptions and Restrictions :
+None; validation handles this.
+
+*/
+
+package geneplatform;
 import com.sun.webkit.Timer;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

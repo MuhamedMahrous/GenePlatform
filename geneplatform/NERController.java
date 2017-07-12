@@ -1,8 +1,32 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Author:				Muhamed Mahrous
+Date:				15/10/2016
+Version:			1.0
+Project ID:			I.E. Framework
+CS Class:			N/A
+Programming Language:		JAVA
+OS/Hardware dependencies:	None
+
+Problem Description:
+The controller of the NER tagging knowledge space.
+
+Overall Design:           The initialize method initializes drag operations and the data members of the class.
+                          and the validate method handles the validation of this knowledge space.
+System structure:          This is a controller in the MVC architecture.
+Data representation:
+ ObservableLists :      1.first_list : holds the first pattern.
+                        2.unique_relation: holds the relation.
+                        3.ner: holds the right node.
+
+Algorithms:	        None.
+
+
+Program Assumptions and Restrictions :
+None; validation handles this.
+
+*/
+
+
 package geneplatform;
 
 import java.io.File;
@@ -24,11 +48,7 @@ import NLL.*;
 
 import javax.swing.plaf.SeparatorUI;
 
-/**
- * FXML Controller class
- *
- * @author muhammedmahrous
- */
+
 public class NERController
         implements Initializable
 {
